@@ -18,32 +18,28 @@ export default function Error({
     <div className="flex min-h-[400px] flex-col items-center justify-center text-center">
       <div className="space-y-6 px-4">
         <h1 className="text-4xl font-bold tracking-tight text-gray-900">Something went wrong</h1>
-        
-        <p className="text-lg text-gray-600 max-w-md mx-auto">
+
+        <p className="mx-auto max-w-md text-lg text-gray-600">
           We apologize for the inconvenience. An error occurred while rendering this page.
         </p>
-        
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <button
             onClick={reset}
-            className="px-5 py-2.5 rounded-md bg-blue-600 hover:bg-blue-700 text-white font-medium transition-colors"
+            className="rounded-md bg-blue-600 px-5 py-2.5 font-medium text-white transition-colors hover:bg-blue-700"
           >
             Try again
           </button>
-          
-          <Link 
+
+          <Link
             href="/"
-            className="px-5 py-2.5 rounded-md border border-gray-300 hover:bg-gray-50 text-gray-700 font-medium transition-colors"
+            className="rounded-md border border-gray-300 px-5 py-2.5 font-medium text-gray-700 transition-colors hover:bg-gray-50"
           >
             Go to homepage
           </Link>
         </div>
 
-        {error.digest && (
-          <p className="text-sm text-gray-500">
-            Error ID: {error.digest}
-          </p>
-        )}
+        {error.digest && <p className="text-sm text-gray-500">Error ID: {error.digest}</p>}
       </div>
     </div>
   );
