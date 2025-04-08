@@ -1,5 +1,4 @@
 import Hero from "@/components/home/hero";
-import { ThemeToggle } from "@/components/shared/theme-toggle";
 
 export default function Home() {
   return (
