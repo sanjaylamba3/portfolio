@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+// import Image from "next/image";
 
 export const BentoGrid = ({
   className,
@@ -24,10 +25,10 @@ export const BentoGridItem = ({
   className,
   title,
   description,
-//   img,
-//   imgClassName,
-//   titleClassName,
-//   spareImg,
+  img,
+  //   imgClassName,
+  //   titleClassName,
+  //   spareImg,
 }: {
   id?: number;
   className?: string;
@@ -35,10 +36,10 @@ export const BentoGridItem = ({
   description?: string | React.ReactNode;
   header?: React.ReactNode;
   icon?: React.ReactNode;
-//   img?: string;
-//   imgClassName?: string;
-//   titleClassName?: string;
-//   spareImg?: string;
+  img?: string;
+  //   imgClassName?: string;
+  //   titleClassName?: string;
+  //   spareImg?: string;
 }) => {
   return (
     <div
@@ -53,7 +54,17 @@ export const BentoGridItem = ({
           "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%",
       }}
     >
-      <div className={`${id === 6} && 'flex h-full justify-center`}>s</div>
+      <div className={` ${id === 6 && "flex h-full justify-center"}`}>
+        <div className="h-full w-full">
+          {img && (
+            <img
+              src={img}
+              alt={img}
+              className="object-cover object-center"
+            ></img>
+          )}
+        </div>
+      </div>
       <div className="transition duration-200 group-hover/bento:translate-x-2">
         <div className="mt-2 mb-2 font-sans font-bold text-neutral-600 dark:text-neutral-200">
           {title}
